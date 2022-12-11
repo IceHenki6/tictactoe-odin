@@ -1,0 +1,25 @@
+*,*::before,*::after{
+    box-sizing: border-box;
+}
+
+#grid-container{
+    width: 700px;
+    height: 700px;
+
+    background-color: aqua;
+    display: grid;
+
+    grid: 1fr 1fr 1fr / 1fr 1fr 1fr;
+}
+
+.cell{
+    border: 1px solid black;
+}
+
+.hidden{
+    display: none;
+}
+
+.test{
+    color: red;
+}
