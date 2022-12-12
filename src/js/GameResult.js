@@ -2,12 +2,12 @@ import GameBoardView from "./GameBoardView.js";
 
 const displayWinner = (player)=>{
     const displayContainer = document.getElementById('game-result');
+    displayContainer.classList.remove('hidden');
     const display = document.createElement('div');
     display.id = 'displayed-result';
     display.innerHTML = `
-        <h1>Player ${player} won!</h1>
-        <button class="new-game">New Game</button>
-        <button id="exit-btn">Exit</button>
+        <h1><span>${player}</span> wins!</h1>
+        <button id="new-game" class="new-game button">New Game</button>
     `;
 
     displayContainer.appendChild(display);
@@ -17,12 +17,12 @@ const displayWinner = (player)=>{
 
 const displayTie = ()=>{
     const displayContainer = document.getElementById('game-result');
+    displayContainer.classList.remove('hidden');
     const display = document.createElement('div');
     display.id = 'displayed-result';
     display.innerHTML = `
         <h1>Tie!</h1>
-        <button class="new-game">New Game</button>
-        <button id="exit-btn">Exit</button>
+        <button id="new-game" class="new-game button">New Game</button>
     `;
 
     displayContainer.appendChild(display);
@@ -32,6 +32,8 @@ const displayTie = ()=>{
 
 document.addEventListener('click', (event)=>{
     if(event.target.classList.contains('new-game')){
+        const displayContainer = document.getElementById('game-result');
+        displayContainer.classList.add('hidden');
         GameBoardView.clearBoard();
         event.target.parentElement.remove();
     }

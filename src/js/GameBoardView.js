@@ -23,7 +23,7 @@ const interaction = (event, player) =>{
 const restartBtn = document.getElementById('restart-btn');
 
 const clearHighlightedArea = ()=>{
-    cells.forEach((cell) => {if(cell.classList.contains('test')){cell.classList.remove('test')}});
+    cells.forEach((cell) => {if(cell.classList.contains('highlighted-area')){cell.classList.remove('highlighted-area')}});
 }
 
 
@@ -38,26 +38,26 @@ restartBtn.addEventListener('click', clearBoard);
 const highlightRow = (index)=>{
     index *= 3;
     for(let i=index; i < index + 3; i++){
-        cells[i].classList.add('test');
+        cells[i].classList.add('highlighted-area');
     }
 }
 
 const highlightColumn = (index)=>{
     for(let i = 0; i<3; i++){
-        cells[index].classList.add('test');
+        cells[index].classList.add('highlighted-area');
         index += 3;
     }
 }
 
 const highlightDiagonal = (index)=>{
     if(index == 0){
-        cells[0].classList.add('test');
-        cells[4].classList.add('test');
-        cells[8].classList.add('test');
+        cells[0].classList.add('highlighted-area');
+        cells[4].classList.add('highlighted-area');
+        cells[8].classList.add('highlighted-area');
     }else if(index==2){
-        cells[2].classList.add('test');
-        cells[4].classList.add('test');
-        cells[6].classList.add('test');
+        cells[2].classList.add('highlighted-area');
+        cells[4].classList.add('highlighted-area');
+        cells[6].classList.add('highlighted-area');
     }
 }
 

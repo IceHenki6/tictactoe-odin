@@ -7,29 +7,15 @@ import Player from "./Player.js";
 const game = document.querySelector('.game');
 const gameGrid = document.querySelector('#grid-container');
 
-const gameStart = document.getElementById('start-game__form');
 
 
-const player1 = Player.createPlayer('Player1', 'X');
-const player2 = Player.createPlayer('Player2', 'Y');
+const player1 = Player.createPlayer('Player 1', 'X');
+const player2 = Player.createPlayer('Player 2', 'Y');
 
-// let playerOnTurn = null;
-// gameStart.addEventListener('submit', (event)=>{
-//     event.preventDefault();
-//     game.classList.remove('hidden');
-//     gameStart.classList.add('hidden');
-
-//     player1 = Player.createPlayer(document.getElementById('player1').value, 'X');
-//     player2 = Player.createPlayer(document.getElementById('player2').value, 'Y');
-
-//     playerOnTurn = player1;
-//     GameBoardView.showPlayer(playerOnTurn);
-// })
-
-// const myGameBoard = GameBoard();
 
 console.log(GameBoard);
 let playerOnTurn = player1;
+GameBoardView.showPlayer(playerOnTurn);
 
 gameGrid.addEventListener('click', (event)=>{
     GameBoardView.interaction(event, playerOnTurn);

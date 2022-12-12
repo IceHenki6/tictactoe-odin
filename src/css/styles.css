@@ -2,24 +2,155 @@
     box-sizing: border-box;
 }
 
-#grid-container{
-    width: 700px;
-    height: 700px;
+:root{
+    --main-font-color: rgb(77, 76, 76);
+}
 
-    background-color: aqua;
+body{
+    margin: 0;
+    padding: 0;
+}
+
+#main{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    font-family: 'Roboto Slab', serif;
+}
+
+#main-title{
+    position: absolute;
+    top: 2%;
+    color:teal;
+    font-size: 40px;
+    margin: 20px;
+}
+
+.game{
+    position: relative;
+    display: flex;
+}
+
+#grid-container{
+    width: 600px;
+    height: 600px;
+
     display: grid;
 
     grid: 1fr 1fr 1fr / 1fr 1fr 1fr;
+    gap: 1em;
 }
 
 .cell{
-    border: 1px solid black;
+    border: 1px solid rgb(138, 138, 138);
+    border-radius: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 95px;
+    font-weight: 700;
+    color: teal;    
 }
+
+#game-panel{
+    position: absolute;
+    right: -35%;
+    font-size: 20px;
+    color:var(--main-font-color);
+}
+
+#player-name{
+    color: teal;
+}
+
+.button{
+    width: 120px;
+    height: 40px;
+
+    color: white;
+    background-color: teal;
+
+    border: none;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    border-radius: 8px;
+}
+
+.button:hover{
+    cursor: pointer;
+
+    background-color: rgb(20, 158, 158);
+}
+
+
 
 .hidden{
-    display: none;
+    display: none !important;
 }
 
-.test{
-    color: red;
+.highlighted-area{
+    background-color: rgb(149, 243, 205);
+}
+
+
+#game-result{
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.619);
+    font-size: 50px;
+    color: var(--main-font-color);
+}
+
+#displayed-result{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#displayed-result > h1 > span{
+    color: teal;
+}
+
+#new-game{
+    width: 250px;
+    height: 60px;
+}
+
+
+
+
+@media only screen and (max-width: 1024px){
+    .game{
+        flex-direction: column;
+    }
+    #game-panel{
+        position: static;
+    }
+
+    #grid-container{
+        width: 400px;
+        height: 400px;
+    }
+}
+
+@media only screen and (max-width: 450px){
+    #grid-container{
+        width: 300px;
+        height: 300px;
+
+        gap: .5em;
+    }
 }
