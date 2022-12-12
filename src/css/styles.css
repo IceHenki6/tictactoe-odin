@@ -140,9 +140,17 @@ body{
         position: static;
     }
 
+}
+
+
+@media only screen and (max-width: 600px){
     #grid-container{
         width: 400px;
         height: 400px;
+    }
+    
+    .cell{
+        font-size: 75px;
     }
 }
 
@@ -152,5 +160,9 @@ body{
         height: 300px;
 
         gap: .5em;
+    }
+
+    .cell{
+        font-size: 55px;
     }
 }
