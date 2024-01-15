@@ -4,7 +4,9 @@
 
 :root{
     --main-font-color: rgb(77, 76, 76);
+    --header-height: 80px;
 }
+
 
 body{
     margin: 0;
@@ -13,7 +15,6 @@ body{
 
 #main{
     display: flex;
-    justify-content: center;
     flex-direction: column;
     align-items: center;
     height: 100vh;
@@ -21,9 +22,14 @@ body{
     font-family: 'Roboto Slab', serif;
 }
 
+header{
+    height: var(--header-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #main-title{
-    position: absolute;
-    top: 2%;
     color:teal;
     font-size: 40px;
     margin: 20px;
@@ -32,6 +38,9 @@ body{
 .game{
     position: relative;
     display: flex;
+    height: calc(100vh - var(--header-height));
+    margin: 0;
+    padding: 0;
 }
 
 #grid-container{
